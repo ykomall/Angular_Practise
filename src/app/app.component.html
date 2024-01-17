@@ -1,0 +1,87 @@
+<h1>{{title}}</h1>
+
+<div>
+<h2>Counter Button</h2>
+<button (click)="counter('minus')">-</button>
+<p>
+  count : {{count}}
+</p>
+<button (click)="counter('add')">+</button>
+</div>
+
+<br>
+<div>
+  <h2>Interpolation Vs Property Binding</h2>
+  <input class="btn" type="text" name="abc" value={{name}} disabled={{d}}><br><br>
+  <input class="btn" type="text" name="abc" [value]=name [disabled]=d><br><br>
+  
+  <button class="btn" disabled={{d}}>click</button>
+  <button class="btn" [disabled]=d>click</button>
+</div>
+<br>
+
+<div>
+<h2>If Else</h2>
+<h3 *ngIf="true">True Condition</h3>
+</div>
+<div>
+<h3 *ngIf="condition==='no'; then ifid else elseid"></h3>
+<ng-template #ifid>
+  <h3>True Condition</h3>
+  </ng-template>
+  <ng-template #elseid>
+    <h3>
+      False Condition
+    </h3>
+  </ng-template>
+</div>
+<br>
+
+<div>
+  <h2>Else if</h2>
+  <ng-template [ngIf]="color==='r'">
+<h3 style="color: red;"> Red</h3>
+  </ng-template>
+  <ng-template [ngIf]="color==='b'">
+    <h3 style="color: blue;">blue</h3>
+  </ng-template>
+</div>
+
+<div>
+  <h2>Switch Case</h2>
+  <div [ngSwitch]="sw_case">
+    <h3 *ngSwitchCase="'r'" style="color: red;">red</h3>
+    <h3 *ngSwitchCase="'b'" style="color:blue;">blue</h3>
+    <h3 *ngSwitchDefault>uk</h3>
+  </div>
+</div>
+
+<div>
+  <h2>ArrayLoop</h2>
+  <h3 *ngFor="let item of user">{{item}}</h3>
+</div>
+
+<div>
+  <h2>Loop on object</h2>
+  <h3 *ngFor="let item of user_detail">
+    {{item.name}}-{{item.id}}-{{item.dept}}
+  </h3>
+
+  <h2>Nested Loop</h2>
+  <ul *ngFor="let u of uDetail">
+<li>Name:{{u.name}}</li>
+<h5>Social Acc</h5>
+<ul *ngFor="let a of u.social">
+<li>{{a}}</li>
+</ul>
+  </ul>
+</div>
+
+<div>
+  <h2>Dynamic Style</h2>
+  <h2 [style.color]="clr" [style.backgroundColor]="bgclr">
+    Style Binding or Dynamic Binding
+  </h2>
+
+  <button (click)="updateColor()">UPDATE</button>
+</div>
