@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import {NgForm} from '@angular/forms';
+
 
 @Component({
   selector: 'app-root',
@@ -41,4 +43,15 @@ name='komal';
     this.bgclr="red";
   }
 
+  userInfo :any={};//why any but not ngForm
+  getData(data : NgForm){ //ngform yes
+    console.warn(data);
+    this.userInfo=data;
+  }
+
+  toggle=false;
+
+  onToggle(){
+    this.toggle=!(this.toggle)
+  }
 }

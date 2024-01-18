@@ -1,4 +1,8 @@
+
 <h1>{{title}}</h1>
+<app-header>
+</app-header>
+
 
 <div>
 <h2>Counter Button</h2>
@@ -85,3 +89,47 @@
 
   <button (click)="updateColor()">UPDATE</button>
 </div>
+
+<div>
+  <h2>Forms</h2>
+
+<form #fid="ngForm" (ngSubmit)="getData(fid.value)">
+<input type="text" ngModel name="user_name" placeholder="Enter user name"/>
+<br><br>
+<input type="text" ngModel name="email" placeholder="Enter email"/>
+<br><br>
+<input type="text" ngModel name="password" placeholder="Enter password"/>
+<br><br>
+
+<button>submit</button>
+</form> 
+<h5>Form Output : {{userInfo.user_name}}--{{userInfo.email}}--{{userInfo.password}}</h5>
+</div>
+
+<div>
+  <h2>Toggle Button</h2>
+  <h3 *ngIf="toggle">
+    Toggle Display
+  </h3>
+  <button (click)="onToggle()">Toggle</button>
+  
+</div>
+
+<div>
+  <h2>Bootstrap install and usage</h2>
+  <ngb-alert [dismissible]="false">
+    <strong>Warning!</strong> Better check yourself, you're not looking too good.
+  </ngb-alert>
+	</div>
+
+  <div>
+    <h2>Angular with Material UI</h2>
+    <div class="example-button-row">
+      <button mat-raised-button>Basic</button>
+      <button mat-raised-button color="primary">Primary</button>
+      <button mat-raised-button color="accent">Accent</button>
+      <button mat-raised-button color="warn">Warn</button>
+      <button mat-raised-button disabled>Disabled</button>
+      <a mat-raised-button href="https://www.google.com/" target="_blank">Link</a>
+    </div>
+  </div>
