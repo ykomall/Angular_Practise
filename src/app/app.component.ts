@@ -54,4 +54,17 @@ name='komal';
   onToggle(){
     this.toggle=!(this.toggle)
   }
+
+  data= 10;
+
+  updateChild(){
+this.data=Math.random();
+  }
+
+  //1.send function from parent component
+  pdata="x";
+  updateParent(item :string){
+console.warn(item);
+this.pdata=item;
+  }
 }

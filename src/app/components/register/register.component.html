@@ -1,0 +1,114 @@
+<!-- <form [formGroup]="registerForm">
+    <p-card header="Register" [style]="{width :'360px'}">
+        <p class="m-0">
+            <div class="field">
+                <label for="email">Email</label>
+                <input type="text"
+                 pInputText formControlName="email" 
+                 class="w-full" 
+                 name="email" 
+                 placeholder="Type your Email" />
+            </div>
+
+            <small *ngIf="email.invalid && (email.dirty || email.touched)" 
+            class="block p-error">
+                <div *ngIf="email.errors?.['required']">Email is required</div>
+                <div *ngIf="email.errors?.['email']">Email should be valid</div>
+            </small>
+
+            <div class="field">
+                <label for="password">Password</label>
+                <input type="password"
+                pInputText formControlName="password" 
+                 class="w-full" 
+                 name="password" 
+                 placeholder="Type your Password" />
+
+                 <small *ngIf="password.invalid && (password.dirty || password.touched)" 
+            class="block p-error">
+                <div *ngIf="password.errors?.['required']">Password is required</div>
+            </small>
+
+            </div>
+            <p-button label="Register" styleClass="w-full" [disabled]="registerF.invalid"></p-button>
+            <div class="mt-2">
+                Not a member? <a router routerLink="/login">login</a>
+            </div>
+
+    </p-card>
+</form> -->
+
+
+<form [formGroup]="registerForm">
+    <p-card header="Register" [style]="{width :'360px'}">
+        <p class="m-0">
+
+            <div class="field">
+                <label for="fullName">Full Name</label>
+                <input type="text"
+                 pInputText formControlName="fullName" 
+                 class="w-full" 
+                 name="fullName" 
+                 placeholder="Type your Name" />
+                
+                 <small *ngIf="fullName.invalid && (fullName.dirty || fullName.touched)" 
+                 class="block p-error">
+                     <div *ngIf="fullName.errors?.['required']">Name is required</div>
+                     <div *ngIf="fullName.errors?.['pattern']">Enter a valid name</div>
+                 </small>
+                </div>
+
+            <div class="field">
+                <label for="email">Email</label>
+                <input type="email"
+                 pInputText formControlName="email" 
+                 class="w-full" 
+                 name="email" 
+                 placeholder="Type your Email" />
+           
+
+            <small *ngIf="email.invalid && (email.dirty || email.touched)" 
+            class="block p-error">
+                <div *ngIf="email.errors?.['required']">Email is required</div>
+                <div *ngIf="email.errors?.['email']">Email should be valid</div>
+            </small>
+        </div>
+
+            <div class="field">
+                <label for="password">Password</label>
+                <input type="password"
+                pInputText formControlName="password" 
+                 class="w-full" 
+                 name="password" 
+                 placeholder="Type your Password" />
+
+                 <small *ngIf="password.invalid && (password.dirty || password.touched)" 
+            class="block p-error">
+                <div *ngIf="password.errors?.['required']">Password is required</div>
+            </small>
+            </div>
+
+            <div class="field">
+                <label for="confirmPassword">Confirm Password</label>
+                <input type="password"
+                pInputText formControlName="confirmPassword" 
+                 class="w-full" 
+                 name="confirmPassword" 
+                 placeholder="confirm Password" />
+
+                 <small *ngIf="confirmPassword.invalid && (confirmPassword.dirty || confirmPassword.touched)" 
+            class="block p-error">
+                <div *ngIf="confirmPassword.errors?.['required']">Confirm the Password</div>
+            </small>
+            </div>
+        
+           <button [disabled]="registerForm.invalid" style="background-color:rgba(149, 97, 97, 1); color: aliceblue; border-radius: 20px;width:320px; height:50px;">
+            Register
+           </button>
+
+            <div class="mt-2">
+                Already a member? <a router routerLink="/login" style="color:rgba(149, 97, 97, 1);">login</a>
+            </div>
+
+    </p-card>
+</form>

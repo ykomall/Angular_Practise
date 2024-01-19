@@ -1,4 +1,8 @@
 
+<div class="flex justify-content-center align-items-center h-full">
+  <router-outlet></router-outlet>
+</div>
+
 <h1>{{title}}</h1>
 <app-header>
 </app-header>
@@ -133,3 +137,18 @@
       <a mat-raised-button href="https://www.google.com/" target="_blank">Link</a>
     </div>
   </div>
+<br>
+  <div>
+    <h2>Parent Componenet to child data transfer</h2>
+    <app-child [item]="data"></app-child>
+  <button (click)="updateChild()">update</button>
+  </div>
+<br>
+  <div>
+   <h2>Child Component to Parent data transfer</h2> 
+   <!-- 4.call in parent component.html -->
+    {{pdata}}
+  <app-child (updateData)="updateParent($event)"></app-child>
+  </div>
+
+  
